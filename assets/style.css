@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    background-image: linear-gradient(to bottom,antiquewhite,white);
+}
+/* input section styles */
+
+#task-inputs{
+    width: 95%;
+}
+
+#todo-container{
+    height: auto;
+    width: 50vw;
+    margin: auto;
+    background-color: #fffdf7;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#heading{
+    font-size: 2.2rem;
+    color:#961108;
+}
+
+#description-box{
+    font-size: 1.1rem;
+    padding: 5px;
+    width: 100%;
+}
+
+.date-catagory{
+    height: 100px;
+    width: 365px;
+}
+
+#date-box{
+    width: 100%;
+}
+
+#submit-button{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-left: 42%;
+}
+
+/* Task list styles */
+#task-list{
+    width: 90%;
+}
+
+.task-card{
+    border-top:none;
+    border-left: none;
+    border-right: none;
+}
+
+input.delete-checkbox{
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+
+}
+
+.task-list-card-body{
+    margin-left: 20px;
+    margin-top: -50px;
+}
+
+.catagory{
+    width: 125px;
+    height: 40px;
+    position: absolute;
+    right: 5%;
+    top:30%;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+.work{
+    background-color: tomato;
+}
+
+.personal{
+    background-color: blueviolet;
+}
+
+.school{
+    background-color: darkblue;
+}
+
+.cleaning{
+    background-color: lightseagreen;
+}
+
+.other{
+    background-color: plum;
+}
+
+#task-delete-button{
+    background-color:red;
+    color: white;
+    margin-top: 20px;
+    margin-left: 42%;
+}
+
+/* common styles */
+.width-full{
+    width: 100%;
+}
+
+.color-inherit{
+    background-color: inherit;
+}
+
+.no-borders{
+    border: 0;
+}
+
+.flex{
+    display: flex;
+}
+
+.relative{
+    position: relative;
+}

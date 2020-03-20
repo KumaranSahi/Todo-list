@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>
+            ToDo List
+        </title>
+        <script src="https://kit.fontawesome.com/33c09ea18c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <main id="todo-container">
+            <h1 id="heading"><i class="fas fa-list-ul"></i>&nbsp;TO-DO List</h1>
+            <!-- input section start -->
+            <div id="task-inputs">
+                <form action="/taskinput" method="POST">
+                    <div class="card width-full color-inherit">
+                        <div class="card-body">
+                            <h5 class="card-title">DESCRIPTION</h5>
+                            <input type="text" name="description" class="no-borders" placeholder="Enter task description" id="description-box" required>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div>
+                            <div class="card  color-inherit date-catagory">
+                                <div class="card-body">
+                                    <h5 class="card-title">CATEGORY</h5>
+                                    <select class="form-control no-borders color-inherit" name="category">
+                                        <option value="none">None</option>
+                                        <option value="work">Work</option>
+                                        <option value="school">School</option>
+                                        <option value="cleaning">Cleaning</option>
+                                        <option value="personal">Personal</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="card  color-inherit date-catagory">
+                                <div class="card-body">
+                                    <h5 class="card-title">DUE DATE</h5>
+                                    <input type="date" class="no-borders color-inherit" id="date-box" name="date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card color-inherit ">
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-lg" id="submit-button"><i class="fas fa-plus"></i>&nbsp;Add Task</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        <!-- end of input section -->
+        <!-- Task list section starts -->
+        <div id="task-list">
+            <form action="/deletetask" method="POST">
+                <%for(i of todoList){%>
+                    <input type="checkbox" name="taskdelete" value="<%=i._id%>" class="delete-checkbox">
+                        <div class="card width-full color-inherit task-card">
+                            <div class="card-body task-list-card-body relative">
+                            <h4 class="card-title"><%=i.description%></h4>
+                            <%if(i.category!="none"){%>
+                                <div class="catagory <%=i.category%>"><h4><%=i.category%></h4></div>
+                            <%}%>
+                            <%if(i.date==null){%>
+                                <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-calendar-alt"></i>&nbsp;No Deadline Specified</h6>
+                            <%}else{%>
+                                <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-calendar-alt"></i>&nbsp;<%=i.date.toDateString()%></h6>
+                            <%}%>
+                            </div>
+                        </div>
+                <%}%>
+                
+                <button type="submit" class="btn btn-lg" id="task-delete-button"><i class="fas fa-trash-alt"></i>&nbsp;Delete Task</button>
+            </form>
+        </div>
+        <!-- end of task list section -->
+        </main>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+    </body>
+</html>
