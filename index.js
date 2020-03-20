@@ -2,15 +2,14 @@ const express=require('express');
 const port=8000;
 
 const app=express();
-const db=require('./config/mongoose');
-const todo=require('./models/todoschema');
+const db=require('./config/mongoose');                      //connecting to db
 
-app.set('view engine','ejs');
-app.set('views','./views');
+app.set('view engine','ejs');                               //Setting up view engine
+app.set('views','./views');                                 //Setting view papth
 
 app.use(express.urlencoded());
-app.use(express.static('./assets'));
-app.use('/',require('./routes/router'));
+app.use(express.static('./assets'));                         
+app.use('/',require('./routes/router'));                     //Setting up the router
 
 app.listen(port,function(err){
     if(err){

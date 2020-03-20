@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost/majorproject',{ useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/majorproject',{ useUnifiedTopology: true });          //connects to database
 
 const db=mongoose.connection;
 

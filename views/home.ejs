@@ -57,7 +57,7 @@
         <div id="task-list">
             <form action="/deletetask" method="POST">
                 <%for(i of todoList){%>
-                    <input type="checkbox" name="taskdelete" value="<%=i._id%>" class="delete-checkbox">
+                    <input type="checkbox" name="taskdelete" value="<%=i._id%>" class="delete-checkbox" >
                         <div class="card width-full color-inherit task-card">
                             <div class="card-body task-list-card-body relative">
                             <h4 class="card-title"><%=i.description%></h4>
