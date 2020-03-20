@@ -1,5 +1,4 @@
 module.exports.input=function(req,res){
-    console.log(req.body);
 
     const todo=require('../models/todoschema');
     
