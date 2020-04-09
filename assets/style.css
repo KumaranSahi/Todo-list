@@ -10,7 +10,7 @@ body{
 
 #todo-container{
     height: auto;
-    width: 50vw;
+    width: 70vw;
     margin: auto;
     background-color: #fffdf7;
     display: flex;
@@ -32,7 +32,7 @@ body{
 
 .date-catagory{
     height: 100px;
-    width: 365px;
+    width: 50%;
 }
 
 #date-box{
